@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Draft Table — 5v5 team randomizer</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Space+Grotesk:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <header class="bar">
+      <div class="bar__inner">
+        <div class="bar__brand">
+          <h1>Draft Table</h1>
+          <p class="bar__sub">Ten names in, two teams out.</p>
+        </div>
+        <div class="bar__actions">
+          <span class="count" id="count" aria-live="polite">0/10</span>
+          <button class="btn btn--ghost" id="clearBtn" type="button">Clear</button>
+          <button class="btn" id="drawBtn" type="button" disabled>Draw teams</button>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <section class="entry" aria-labelledby="entryHead">
+        <div class="secHead">
+          <h2 id="entryHead">Who's playing?</h2>
+          <p class="hint" id="hint">Add 10 names.</p>
+        </div>
+        <textarea
+          class="rosterInput"
+          id="roster"
+          rows="10"
+          spellcheck="false"
+          autocomplete="off"
+          aria-label="Player names, one per line"
+          placeholder="Kai&#10;Rene&#10;Migs&#10;Sasha&#10;Tomas&#10;Ines&#10;Jomar&#10;Lia&#10;Paolo&#10;Vera"
+        ></textarea>
+        <p class="formNote">
+          One name per line, or separate names with commas. Every name needs to be
+          different.
+        </p>
+      </section>
+
+      <section class="board" aria-label="Draw result">
+        <div class="resultBar" id="teamsBar" hidden>
+          <span class="resultBar__label">Result</span>
+          <button class="btn btn--small" id="copyBtn" type="button">Copy results</button>
+        </div>
+        <div id="teamsBody">
+          <p class="empty">
+            Nothing drawn yet. Add ten names and press Draw teams.
+          </p>
+        </div>
+      </section>
+
+      <p class="note">
+        Teams are split at random, then roles are dealt inside each team. Edit a name
+        after the draw and the result updates with it.
+      </p>
+    </main>
+
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>
