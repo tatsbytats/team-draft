@@ -77,12 +77,6 @@ button {
   font-size: 19px;
 }
 
-.bar__sub {
-  margin: 0;
-  font-size: 13px;
-  color: rgba(241, 242, 236, 0.6);
-}
-
 .bar__actions {
   display: flex;
   align-items: center;
@@ -360,10 +354,6 @@ main {
   main {
     padding-left: 16px;
     padding-right: 16px;
-  }
-
-  .bar__sub {
-    display: none;
   }
 
   .row {
